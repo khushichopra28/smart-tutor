@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NeuroLearn Beta Queue Admin</title>
+    <title>NeuroLearn Admin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,8 +21,10 @@
             <li><a href="index.html#dashboard">Dashboard</a></li>
             <li><a href="index.html#how-it-works">How it Works</a></li>
             <li><a href="index.html#testimonials">Reviews</a></li>
-            <li><a href="admin.html">Beta queue</a></li>
           </ul>
+          <div class="nav-cta">
+            <a class="btn-outline" href="signin.html">Sign in</a>
+          </div>
         </nav>
       </div>
     </header>
@@ -32,25 +33,28 @@
       <section class="features reveal" id="admin-dashboard">
         <div class="section-header">
           <div class="section-tag">Admin view</div>
-          <h2>Beta signup queue</h2>
-          <p>Monitor incoming signup requests and review the email list stored by the API.</p>
+          <h2>NeuroLearn administration</h2>
+          <p>Internal tools and monitoring for the experience are available from this console.</p>
         </div>
         <div class="dashboard-preview glass-card" style="padding: 32px; flex-direction: column; gap: 20px;">
           <div class="dash-chart-area" style="padding: 28px;">
             <div class="chart-header" style="margin-bottom: 18px;">
-              <span>Current signups</span>
-              <button id="refreshSignups" class="ct">Refresh</button>
+              <span>Admin status</span>
             </div>
-            <div id="signupSummary" style="margin-bottom: 18px; font-size: 1rem; color: var(--text-muted-strong);"></div>
-            <div id="signupList" style="display: grid; gap: 12px;"></div>
+            <div style="margin-bottom: 18px; font-size: 1rem; color: var(--text-muted-strong);">
+              The beta signup queue has been removed. This page now serves as a clean admin overview.
+            </div>
+            <div style="display: grid; gap: 12px;">
+              <div class="feature-card" style="padding: 16px;">
+                <h4>No active beta queue</h4>
+                <p style="margin: 0; color: var(--text-muted-strong);">All signups are now managed through the main course tracking flow.</p>
+              </div>
+            </div>
           </div>
           <div class="recommendations glass-card" style="padding: 24px;">
-            <h4>How to use</h4>
+            <h4>Notes</h4>
             <p style="font-size: 0.95rem; color: var(--text-muted-strong);">
-              This admin view displays the current beta queue recorded by the server API. Refresh to pull the latest data.
-            </p>
-            <p style="font-size: 0.95rem; color: var(--text-muted-strong);">
-              If the backend is unavailable, the page will show a warning message.
+              The beta queue feature is no longer active. Use the sign-in flow and progress dashboard for real user tracking.
             </p>
           </div>
         </div>
@@ -61,7 +65,7 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="index.html" class="logo">Neuro<span>Learn</span></a>
-          <p>Admin dashboard for the beta queue.</p>
+          <p>Admin dashboard for the platform.</p>
         </div>
         <div class="footer-links">
           <div class="footer-col">
@@ -70,7 +74,7 @@
           </div>
           <div class="footer-col">
             <h5>API</h5>
-            <a href="/api/beta-signups">Beta signups JSON</a>
+            <a href="/api">API documentation</a>
           </div>
         </div>
       </div>
