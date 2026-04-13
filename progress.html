@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuroLearn Progress</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Patrick+Hand&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">Neuro<span>Learn</span></a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#dashboard">Dashboard</a></li>
+            <li><a href="index.html#how-it-works">How it Works</a></li>
+            <li><a href="index.html#testimonials">Reviews</a></li>
+          </ul>
+          <div class="nav-cta">
+            <button id="signOutBtn" class="btn-outline">Sign out</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero reveal" id="progress-overview">
+        <div class="hero-bg">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+          <div class="grid-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <span class="hero-badge"><span class="badge-dot"></span> Personalized progress</span>
+          <div class="hero-title">
+            <h1>Your learning tracker updates with every session.</h1>
+          </div>
+          <p class="hero-sub">
+            This dashboard reflects your actual performance, shows weak points, and recommends what to practice next.
+          </p>
+          <div class="hero-btns">
+            <a class="btn-primary btn-lg" href="#progress-summary">See progress</a>
+            <a class="btn-outline" href="#performance-details">How it tracks</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="brain-container glass-card">
+            <div class="brain-label lbl-top" id="profileLabel">Welcome back</div>
+            <div class="brain-label lbl-right" id="progressLabel">Learning streak</div>
+            <div class="brain-label lbl-bottom" id="accuracyLabel">Accuracy</div>
+            <div class="brain-label lbl-left" id="xpLabel">XP gained</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features reveal" id="progress-summary">
+        <div class="section-header">
+          <div class="section-tag">Dashboard</div>
+          <h2>Real metrics based on your learning history.</h2>
+          <p id="welcomeMsg">Welcome back! Here’s how your current progress is shaping up.</p>
+          <div id="reminderBanner" class="reminder-banner hidden">
+            Add a course and log your first session to start tracking your real performance.
+          </div>
+        </div>
+        <div class="dashboard-preview glass-card">
+          <div class="dash-main" style="gap: 24px;">
+            <div class="dash-metrics">
+              <div class="metric-card">
+                <div class="metric-label">Current streak</div>
+                <div class="metric-val" id="streakValue">0d</div>
+                <div class="metric-change up" id="streakDelta">+0%</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-label">Accuracy</div>
+                <div class="metric-val" id="accuracyValue">0%</div>
+                <div class="metric-change up" id="accuracyDelta">+0</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-label">XP earned</div>
+                <div class="metric-val" id="xpValue">0</div>
+                <div class="metric-change up" id="xpDelta">+0</div>
+              </div>
+            </div>
+            <div class="dash-chart-area">
+              <div class="chart-header">
+                <span>Performance over time</span>
+                <div class="chart-tabs">
+                  <button class="ct active">7D</button>
+                  <button class="ct">30D</button>
+                  <button class="ct">All</button>
+                </div>
+              </div>
+              <canvas id="progressChart" aria-label="Learning progress chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features reveal" id="course-tracker">
+        <div class="section-header">
+          <div class="section-tag">Courses</div>
+          <h2>Add a course and track practice sessions.</h2>
+          <p>Enroll in what you’re studying, log each session, and watch your progress update naturally.</p>
+        </div>
+        <div class="dashboard-preview glass-card">
+          <form id="courseForm" class="auth-form" style="margin-bottom: 28px;">
+            <label for="courseName">Course name</label>
+            <input id="courseName" name="courseName" type="text" placeholder="e.g. Calculus" required />
+            <label for="courseGoal">Weekly sessions goal</label>
+            <input id="courseGoal" name="courseGoal" type="number" placeholder="4" min="1" required />
+            <button class="btn-primary btn-lg" type="submit">Add course</button>
+          </form>
+          <div id="courseList" class="courses-grid"></div>
+        </div>
+      </section>
+
+      <section class="how-section reveal" id="performance-details">
+        <div class="section-header">
+          <div class="section-tag">How it tracks</div>
+          <h2>Progress is built from your answers, accuracy, and consistency.</h2>
+          <p>Every session updates your dashboard automatically, highlighting strength, weak areas, and the next best target.</p>
+        </div>
+        <div class="steps-container">
+          <article class="step-card">
+            <div class="step-num">Step 1</div>
+            <div class="step-icon">🧠</div>
+            <h3>Session data</h3>
+            <p>We capture your answer speed, accuracy, and correction behavior after each exercise.</p>
+          </article>
+          <div class="step-arrow">→</div>
+          <article class="step-card">
+            <div class="step-num">Step 2</div>
+            <div class="step-icon">📊</div>
+            <h3>Performance score</h3>
+            <p>Your dashboard weights weak points and gives a progress score for every topic.</p>
+          </article>
+          <div class="step-arrow">→</div>
+          <article class="step-card">
+            <div class="step-num">Step 3</div>
+            <div class="step-icon">🚀</div>
+            <h3>Smart guidance</h3>
+            <p>The app recommends what to practice next so your study plan adapts with real results.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Neuro<span>Learn</span></a>
+          <p>Performance tracking that keeps your progress visible and actionable.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Account</h5>
+            <a href="signin.html">Sign in</a>
+            <a href="#progress-summary">Your progress</a>
+          </div>
+          <div class="footer-col">
+            <h5>Product</h5>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#dashboard">Dashboard</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 NeuroLearn.</p>
+      </div>
+    </footer>
+
+    <script src="progress.js"></script>
+  </body>
+</html>

@@ -1,0 +1,274 @@
+/* ===================================================
+   animations.css — NeuroLearn Motion System
+   =================================================== */
+
+/* ---- Scroll reveal base ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Delay utilities ---- */
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
+.delay-4 { transition-delay: 0.48s; }
+
+/* ---- Orb float ---- */
+@keyframes orbFloat {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(30px, -20px) scale(1.05); }
+  100% { transform: translate(-15px, 25px) scale(0.97); }
+}
+
+/* ---- Badge dot pulse ---- */
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--accent-green); }
+  50%       { opacity: 0.6; box-shadow: 0 0 20px var(--accent-green); }
+}
+
+/* ---- CTA button pulse ring ---- */
+.pulse-btn { position: relative; }
+.pulse-btn::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50px;
+  border: 2px solid var(--primary);
+  opacity: 0;
+  animation: pulseRing 2.5s ease-out infinite;
+}
+@keyframes pulseRing {
+  0%   { transform: scale(0.95); opacity: 0.6; }
+  60%  { transform: scale(1.08); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ---- SVG Brain: slow rotate ---- */
+.rotate-slow {
+  transform-origin: 210px 210px;
+  animation: rotateSlow 30s linear infinite;
+}
+.rotate-slow-rev {
+  transform-origin: 210px 210px;
+  animation: rotateSlow 22s linear infinite reverse;
+}
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ---- Node pulse ---- */
+.node-pulse {
+  animation: nodePulse 3s ease-in-out infinite;
+}
+.delay-pulse-1 { animation-delay: 0.7s; }
+.delay-pulse-2 { animation-delay: 1.4s; }
+.delay-pulse-3 { animation-delay: 2.1s; }
+@keyframes nodePulse {
+  0%, 100% { r: 14; opacity: 1; }
+  50%       { r: 16; opacity: 0.8; }
+}
+
+/* ---- Connection flash ---- */
+.conn-flash { animation: connFlash 2.5s ease-in-out infinite; }
+@keyframes connFlash {
+  0%, 100% { opacity: 0.3; stroke-width: 1.5; }
+  50%       { opacity: 1;   stroke-width: 2.5; }
+}
+
+/* ---- Floating particles ---- */
+.particle { animation: floatParticle 6s ease-in-out infinite; }
+.p1 { animation-delay: 0s;   animation-duration: 7s; }
+.p2 { animation-delay: 1.2s; animation-duration: 5.5s; }
+.p3 { animation-delay: 2.4s; animation-duration: 8s; }
+.p4 { animation-delay: 0.8s; animation-duration: 6s; }
+.p5 { animation-delay: 3s;   animation-duration: 7.5s; }
+
+@keyframes floatParticle {
+  0%, 100% { transform: translate(0, 0); opacity: 0.8; }
+  25%       { transform: translate(6px, -8px); opacity: 1; }
+  50%       { transform: translate(-4px, -14px); opacity: 0.6; }
+  75%       { transform: translate(8px, -6px); opacity: 0.9; }
+}
+
+/* ---- Brain label fade-in-out drift ---- */
+.brain-label {
+  animation: labelDrift 5s ease-in-out infinite;
+}
+.lbl-right  { animation-delay: 0.4s; }
+.lbl-bottom { animation-delay: 0.8s; }
+.lbl-left   { animation-delay: 1.2s; }
+@keyframes labelDrift {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%); }
+  50%       { opacity: 1;   transform: translateX(-50%) translateY(-3px); }
+}
+.lbl-right, .lbl-left {
+  animation-name: labelDriftVert;
+}
+@keyframes labelDriftVert {
+  0%, 100% { opacity: 0.6; transform: translateY(-50%); }
+  50%       { opacity: 1;   transform: translateY(-50%) translateX(-3px); }
+}
+
+/* ---- Card hover lift (extra) ---- */
+.feature-card, .testi-card, .step-card {
+  will-change: transform;
+}
+
+/* ---- Progress bar animated fill ---- */
+@keyframes barFill {
+  from { width: 0%; }
+  to   { width: var(--target-w); }
+}
+
+/* ---- Dashboard metric value count-up handled in JS ---- */
+
+/* ---- Chart tab active indicator ---- */
+.ct { position: relative; overflow: hidden; }
+.ct::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 24%; right: 24%;
+  height: 4px;
+  background: var(--accent-secondary);
+  transition: left 0.3s ease, right 0.3s ease;
+  border-radius: 2px;
+}
+.ct.active::after { left: 10%; right: 10%; }
+
+/* ---- Navbar transition ---- */
+.navbar { will-change: background, box-shadow; }
+
+/* ---- Page entrance: hero fade ---- */
+@keyframes heroEntrance {
+  from { opacity: 0; transform: scale(0.97) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.hero-content {
+  animation: heroEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-visual {
+  animation: heroEntrance 1.2s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ---- Shimmer for cards ---- */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(45,45,45,0.04) 50%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.glass-card { position: relative; overflow: hidden; }
+.glass-card:hover::before {
+  opacity: 0.18;
+}
+
+/* ---- Dash nav item hover ---- */
+.dash-nav-item {
+  position: relative;
+  overflow: hidden;
+}
+.dash-nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 3px;
+  height: 60%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: transform 0.25s ease;
+}
+.dash-nav-item.active::before,
+.dash-nav-item:hover::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+/* ---- Rec button slide ---- */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ---- Footer links hover underline ---- */
+.footer-col a {
+  position: relative;
+  display: inline-block;
+}
+.footer-col a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 0%; height: 1px;
+  background: var(--accent-secondary);
+  transition: width 0.3s ease;
+}
+.footer-col a:hover::after { width: 100%; }
+
+/* ---- Scroll progress indicator ---- */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent));
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ---- Mobile menu open ---- */
+.mobile-nav-open .nav-links,
+.mobile-nav-open .nav-cta {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: var(--nav-h);
+  left: 0; right: 0;
+  background: rgba(253,251,247,0.98);
+  border-top: 3px dashed var(--border);
+  padding: 24px 5%;
+  padding: 24px 5%;
+  border-bottom: 1px solid var(--border);
+  animation: slideDown 0.3s ease;
+  z-index: 999;
+}
+.mobile-nav-open .nav-links {
+  gap: 6px;
+  padding-bottom: 0;
+}
+.mobile-nav-open .nav-cta {
+  top: calc(var(--nav-h) + 200px);
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  flex-direction: row;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Hamburger X animation ---- */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }

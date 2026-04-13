@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuroLearn Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Patrick+Hand&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">Neuro<span>Learn</span></a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#dashboard">Dashboard</a></li>
+            <li><a href="index.html#how-it-works">How it Works</a></li>
+            <li><a href="index.html#testimonials">Reviews</a></li>
+          </ul>
+          <div class="nav-cta">
+            <a class="btn-outline" href="progress.html">Progress</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="features reveal" id="signin-screen">
+        <div class="section-header">
+          <div class="section-tag">Sign in</div>
+          <h2>Welcome back to your learning progress.</h2>
+          <p>Enter your email and password to access your performance dashboard.</p>
+        </div>
+        <div class="dashboard-preview glass-card auth-card">
+          <form id="signinForm" class="auth-form" novalidate>
+            <label for="signinEmail">Email</label>
+            <input id="signinEmail" name="email" type="email" placeholder="your@email.com" required />
+
+            <label for="signinPassword">Password</label>
+            <input id="signinPassword" name="password" type="password" placeholder="Password" required />
+
+            <button class="btn-primary btn-lg" type="submit">Sign in</button>
+            <p class="form-note">New here? Use any email and password to instantly create your profile.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Neuro<span>Learn</span></a>
+          <p>Securely sign in and track your learning performance in one place.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Account</h5>
+            <a href="signin.html">Sign in</a>
+            <a href="progress.html">Progress</a>
+          </div>
+          <div class="footer-col">
+            <h5>Resources</h5>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#dashboard">Dashboard</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 NeuroLearn.</p>
+      </div>
+    </footer>
+
+    <script src="signin.js"></script>
+  </body>
+</html>

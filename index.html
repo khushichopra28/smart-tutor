@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuroLearn — Sketchy Learning Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Patrick+Hand&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="animations.css" />
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="#home" class="logo">Neuro<span>Learn</span></a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#how-it-works">How it Works</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+          </ul>
+          <div class="nav-cta">
+            <a class="btn-outline" href="signin.html">Sign in</a>
+          </div>
+        </nav>
+        <button id="hamburger" class="hamburger" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero reveal" id="home">
+        <div class="hero-bg">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+          <div class="grid-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <span class="hero-badge"><span class="badge-dot"></span> Adaptive study paths</span>
+          <div class="hero-title">
+            <h1>Learn smarter, not harder with <span>sketchy</span> AI guidance.</h1>
+          </div>
+          <p class="hero-sub">
+            NeuroLearn helps you track progress, sharpen weak areas, and stay motivated with playful dashboard analytics and friendly reminders.
+          </p>
+          <div class="hero-btns">
+            <a class="btn-primary btn-lg" href="#features">Start Learning</a>
+            <a class="btn-outline" href="#dashboard">View Demo</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-num" data-target="48">48</div>
+              <span>XP / min</span>
+              <p>Fast daily improvement.</p>
+            </div>
+            <div class="stat stat-divider"></div>
+            <div class="stat">
+              <div class="stat-num" data-target="92">92</div>
+              <span>%</span>
+              <p>Accuracy boost with every session.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="brain-container glass-card">
+            <svg class="brain-svg rotate-slow" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="210" cy="210" r="180" fill="rgba(255,255,255,0.08)" />
+              <circle cx="130" cy="140" r="18" fill="#FF4D4D" class="node-pulse" />
+              <circle cx="260" cy="120" r="14" fill="#2D5DA1" />
+              <circle cx="310" cy="230" r="16" fill="#2D5DA1" class="delay-pulse-1" />
+              <circle cx="185" cy="275" r="14" fill="#FF4D4D" class="delay-pulse-2" />
+              <path d="M90 220 Q130 160 180 190 Q230 220 280 170 Q320 130 340 200" stroke="#2D5DA1" stroke-width="6" fill="none" class="conn-flash" />
+            </svg>
+            <div class="brain-label lbl-top">Brain training</div>
+            <div class="brain-label lbl-right">Smart review</div>
+            <div class="brain-label lbl-bottom">Daily streaks</div>
+            <div class="brain-label lbl-left">Performance map</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features reveal" id="features">
+        <div class="section-header">
+          <div class="section-tag">What you can do</div>
+          <h2>Everything you need for a productive study session.</h2>
+          <p>Built for learners who want a playful, easy-to-follow dashboard with meaningful recommendations and progress tracking.</p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card" data-index="0">
+            <div class="feat-icon icon-blue">🧠</div>
+            <h3>Adaptive intelligence</h3>
+            <p>Content reshapes itself to your strengths and weak spots so every study minute counts.</p>
+            <div class="feat-bar"><div class="feat-bar-fill" data-width="92"></div></div>
+          </article>
+          <article class="feature-card" data-index="1">
+            <div class="feat-icon icon-purple">⚡</div>
+            <h3>Fast focus mode</h3>
+            <p>Short, sketchy sessions keep you motivated and let you build momentum without burnout.</p>
+            <div class="feat-bar"><div class="feat-bar-fill" data-width="84"></div></div>
+          </article>
+          <article class="feature-card" data-index="2">
+            <div class="feat-icon icon-yellow">📊</div>
+            <h3>Performance dashboard</h3>
+            <p>Track accuracy, streaks, and skill gains with a friendly, hand-drawn-inspired dashboard.</p>
+            <div class="feat-bar"><div class="feat-bar-fill" data-width="77"></div></div>
+          </article>
+          <article class="feature-card" data-index="3">
+            <div class="feat-icon icon-green">🎯</div>
+            <h3>Goal-driven plans</h3>
+            <p>Set learning goals, follow simple steps, and let the system suggest your next best topic.</p>
+            <div class="feat-bar"><div class="feat-bar-fill" data-width="88"></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="dashboard-section reveal" id="dashboard">
+        <div class="section-header">
+          <div class="section-tag">Live preview</div>
+          <h2>See the sketchy study dashboard in action.</h2>
+          <p>Everything is arranged in a calm, hand-drawn layout so data feels approachable and playful.</p>
+        </div>
+        <div class="dashboard-preview glass-card">
+          <aside class="dash-sidebar">
+            <div class="dash-user">
+              <div class="dash-avatar">AL</div>
+              <div>
+                <div class="dash-name">Alex Learner</div>
+                <div class="dash-level">Level 12 • Intermediate</div>
+              </div>
+            </div>
+            <nav class="dash-nav">
+              <a href="#" class="dash-nav-item active">Overview</a>
+              <a href="#" class="dash-nav-item">Study Plan</a>
+              <a href="#" class="dash-nav-item">Review</a>
+              <a href="#" class="dash-nav-item">Skills</a>
+            </nav>
+            <div class="dash-streak">
+              <div class="streak-label">Current streak</div>
+              <div class="streak-num">18 days</div>
+            </div>
+          </aside>
+          <div class="dash-main">
+            <div class="dash-metrics">
+              <div class="metric-card">
+                <div class="metric-label">Next goal</div>
+                <div class="metric-val">320 XP</div>
+                <div class="metric-change up">+15% this week</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-label">Accuracy</div>
+                <div class="metric-val">89%</div>
+                <div class="metric-change up">+7 points</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-label">Daily streak</div>
+                <div class="metric-val">18d</div>
+                <div class="metric-change up">On track</div>
+              </div>
+            </div>
+            <div class="dash-chart-area">
+              <div class="chart-header">
+                <span>Recent progress</span>
+                <div class="chart-tabs">
+                  <button class="ct active">7D</button>
+                  <button class="ct">30D</button>
+                  <button class="ct">All</button>
+                </div>
+              </div>
+              <canvas id="progressChart" aria-label="Learning progress chart"></canvas>
+            </div>
+            <div class="dash-bottom">
+              <div class="weak-areas glass-card">
+                <h4>Weak areas</h4>
+                <div class="weak-item"><span>Memory</span><div class="weak-bar"><div class="weak-fill" style="width: 68%;"></div></div><div class="weak-pct">68%</div></div>
+                <div class="weak-item"><span>Recall</span><div class="weak-bar"><div class="weak-fill" style="width: 54%;"></div></div><div class="weak-pct">54%</div></div>
+                <div class="weak-item"><span>Focus</span><div class="weak-bar"><div class="weak-fill" style="width: 75%;"></div></div><div class="weak-pct">75%</div></div>
+              </div>
+              <div class="recommendations glass-card">
+                <h4>Recommended next steps</h4>
+                <div class="rec-item">
+                  <div>
+                    <div class="rec-icon">✍️</div>
+                    <div class="rec-title">Sketch note practice</div>
+                    <div class="rec-sub">Improve retention with quick recall tasks.</div>
+                  </div>
+                  <button class="rec-btn">Start</button>
+                </div>
+                <div class="rec-item">
+                  <div>
+                    <div class="rec-icon">🔍</div>
+                    <div class="rec-title">Accuracy check</div>
+                    <div class="rec-sub">Review answers for higher confidence.</div>
+                  </div>
+                  <button class="rec-btn">Start</button>
+                </div>
+                <div class="rec-item">
+                  <div>
+                    <div class="rec-icon">🧩</div>
+                    <div class="rec-title">Skill drill</div>
+                    <div class="rec-sub">Strengthen your weakest topic today.</div>
+                  </div>
+                  <button class="rec-btn">Start</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-section reveal" id="how-it-works">
+        <div class="section-header">
+          <div class="section-tag">How it works</div>
+          <h2>Three quick steps to better learning every day.</h2>
+          <p>Follow a simple pipeline that turns study data into a playful progress system.</p>
+        </div>
+        <div class="steps-container">
+          <article class="step-card">
+            <div class="step-num">Step 01</div>
+            <div class="step-icon">📝</div>
+            <h3>Choose your topic</h3>
+            <p>Select what you want to master and let the system build your plan.</p>
+          </article>
+          <div class="step-arrow">→</div>
+          <article class="step-card">
+            <div class="step-num">Step 02</div>
+            <div class="step-icon">⚙️</div>
+            <h3>Practice with mini sessions</h3>
+            <p>Work through short exercises tailored to your current level.</p>
+          </article>
+          <div class="step-arrow">→</div>
+          <article class="step-card">
+            <div class="step-num">Step 03</div>
+            <div class="step-icon">📈</div>
+            <h3>Review progress</h3>
+            <p>See clear gains and get the next suggestions instantly.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="testimonials reveal" id="testimonials">
+        <div class="section-header">
+          <div class="section-tag">Feedback</div>
+          <h2>Learners love the playful analytics.</h2>
+          <p>NeuroLearn turns study habits into fun, understandable progress that sticks.</p>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>“The sketchy visuals make progress feel less intimidating and more motivating every day.”</p>
+            <div class="testi-author">
+              <div class="testi-avatar">MJ</div>
+              <div><strong>Mae Jensen</strong><span>Biology student</span></div>
+            </div>
+          </article>
+          <article class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>“I love the dashboard vibe—friendly, clear, and the recommendations actually help me stay on track.”</p>
+            <div class="testi-author">
+              <div class="testi-avatar">RK</div>
+              <div><strong>Rory Kim</strong><span>Data analyst</span></div>
+            </div>
+          </article>
+          <article class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>“It feels like a notebook version of my progress, but with real analytics behind it.”</p>
+            <div class="testi-author">
+              <div class="testi-avatar">SP</div>
+              <div><strong>Sana Patel</strong><span>Exam prep</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-banner reveal" id="contact">
+        <div class="cta-inner">
+          <h2>Ready to make your study sessions feel sketchy and smart?</h2>
+          <p>Sign in to see your personalized progress, performance breakdowns, and learning insights.</p>
+          <div class="hero-btns">
+            <a class="btn-primary btn-lg pulse-btn" href="signin.html">Sign in</a>
+            <a class="btn-outline" href="#features">Explore features</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#home" class="logo">Neuro<span>Learn</span></a>
+          <p>Sketchy learning tools for people who want progress that feels human and playful.</p>
+          <div class="social-links">
+            <a class="social-icon" href="#">T</a>
+            <a class="social-icon" href="#">D</a>
+            <a class="social-icon" href="#">L</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Product</h5>
+            <a href="#features">Features</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#how-it-works">How it works</a>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h5>Resources</h5>
+            <a href="#">Blog</a>
+            <a href="#">Guides</a>
+            <a href="#">Support</a>
+          </div>
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+          </div>
+          <div class="footer-col">
+            <h5>Account</h5>
+            <a href="signin.html">Sign in</a>
+            <a href="progress.html">Your progress</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 NeuroLearn. Crafted for learners and sketchy thinkers.</p>
+        <p>Made with curiosity and a little bit of scribble.</p>
+      </div>
+    </footer>
+
+    <script src="chart.js"></script>
+    <script src="animations.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

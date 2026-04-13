@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuroLearn Beta Queue Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Patrick+Hand&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">Neuro<span>Learn</span></a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#dashboard">Dashboard</a></li>
+            <li><a href="index.html#how-it-works">How it Works</a></li>
+            <li><a href="index.html#testimonials">Reviews</a></li>
+            <li><a href="admin.html">Beta queue</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="features reveal" id="admin-dashboard">
+        <div class="section-header">
+          <div class="section-tag">Admin view</div>
+          <h2>Beta signup queue</h2>
+          <p>Monitor incoming signup requests and review the email list stored by the API.</p>
+        </div>
+        <div class="dashboard-preview glass-card" style="padding: 32px; flex-direction: column; gap: 20px;">
+          <div class="dash-chart-area" style="padding: 28px;">
+            <div class="chart-header" style="margin-bottom: 18px;">
+              <span>Current signups</span>
+              <button id="refreshSignups" class="ct">Refresh</button>
+            </div>
+            <div id="signupSummary" style="margin-bottom: 18px; font-size: 1rem; color: var(--text-muted-strong);"></div>
+            <div id="signupList" style="display: grid; gap: 12px;"></div>
+          </div>
+          <div class="recommendations glass-card" style="padding: 24px;">
+            <h4>How to use</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted-strong);">
+              This admin view displays the current beta queue recorded by the server API. Refresh to pull the latest data.
+            </p>
+            <p style="font-size: 0.95rem; color: var(--text-muted-strong);">
+              If the backend is unavailable, the page will show a warning message.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Neuro<span>Learn</span></a>
+          <p>Admin dashboard for the beta queue.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Back to</h5>
+            <a href="index.html">Home</a>
+          </div>
+          <div class="footer-col">
+            <h5>API</h5>
+            <a href="/api/beta-signups">Beta signups JSON</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 NeuroLearn Admin</p>
+      </div>
+    </footer>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
