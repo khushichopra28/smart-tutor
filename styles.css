@@ -356,6 +356,13 @@ section { padding: 100px 5%; }
 }
 .logo span { color: var(--accent); }
 
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
